@@ -37,9 +37,11 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="axime.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="axime.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -60,7 +62,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\c++\axime\3rdparty\soil\src;C:\c++\axime\3rdparty\glfw3\win32\include;C:\c++\axime\3rdparty\glew\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Root)3rdparty\soil\src;$(Root)3rdparty\glfw3\win32\include;$(Root)3rdparty\glew\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -73,10 +75,14 @@
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glew\win32\lib\*.*" "$(ProjectDir)\lib"
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(ProjectDir)\lib"
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
+
+xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y
+
 </Command>
     </PreLinkEvent>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,7 +95,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\c++\axime\3rdparty\soil\src;C:\c++\axime\3rdparty\glfw3\win32\include;C:\c++\axime\3rdparty\glew\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Root)3rdparty\soil\src;$(Root)3rdparty\glfw3\win32\include;$(Root)3rdparty\glew\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,10 +110,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glew\win32\lib\*.*" "$(ProjectDir)\lib"
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(ProjectDir)\lib"
 xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
+
+xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y
+
 </Command>
     </PreLinkEvent>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y</Command>
+      <Command>xcopy "$(ProjectDir)..\res"  "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
