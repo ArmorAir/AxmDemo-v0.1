@@ -9,6 +9,9 @@
 
 #include "SOIL.h"
 
+#include <set>
+#include <map>
+
 
 using namespace std;
 
@@ -21,12 +24,13 @@ void key_callback(GLFWwindow* w, int key, int scancode, int action, int node) {
 const GLuint W = 800, H = 600;
 
 const GLchar* vertexShaderSource =
+"#version 330\n"
 "uniform vec4 coord;\n"
 "uniform vec2 N;\n"
 "layout(location = 0) in vec3 a_position;\n"
 "layout(location = 1) in vec2 a_uv;\n"
 
-"varying vec2 TexCoord;\n"
+"out vec2 TexCoord;\n"
 
 "void main()\n"
 "{\n"
@@ -35,28 +39,29 @@ const GLchar* vertexShaderSource =
 "}\0";
 
 const GLchar* fragmentShaderSource =
+"#version 330\n"
 "out vec4 color;\n"
 "uniform vec2 N;\n"
 
 "uniform sampler2D tex_AAA;\n"
 
-"varying vec2 TexCoord;\n"
+"in vec2 TexCoord;\n"
 
 "void main()\n"
 "{\n"
 "color = texture(tex_AAA, TexCoord)*N.yyyy;\n"
 "}\n\0";
 
-const GLchar* vertexShaderSource2 =
-"uniform vec4 coord;\n"
-"uniform vec2 N;\n"
-"in vec3 a_position;\n"
-
-
-"void main()\n"
-"{\n"
-"gl_Position = vec4(a_position,1.0)*coord;\n"
-"}\0";
+//const GLchar* vertexShaderSource2 =
+//"uniform vec4 coord;\n"
+//"uniform vec2 N;\n"
+//"in vec3 a_position;\n"
+//
+//
+//"void main()\n"
+//"{\n"
+//"gl_Position = vec4(a_position,1.0)*coord;\n"
+//"}\0";
 
 void mouse_callback(GLFWwindow* w, int key, int scancode, int action) {
 	cout << "Mouse: " << key << endl;
@@ -127,20 +132,25 @@ int main() {
 		return -1;
 	}
 
+	//glProgramUniform1f()
+
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
 	GLint size_A;
 
-	glGetIntegerv(GL_MAX_VERTEX_UNIFORM_VECTORS, &size_A);
-	cout << size_A << endl;
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &size_A);
+	cout << "GL_FRAMEBUFFER_BINDING: " << size_A << endl;
 	glGetIntegerv(GL_MAX_VARYING_VECTORS, &size_A);
-	cout << size_A << endl;
+	cout << "GL_MAX_VARYING_VECTORS: " << size_A << endl;
 	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &size_A);
-	cout << size_A << endl;
-	glGetIntegerv(GL_MAX_TEXTURE_UNITS, &size_A);
-	cout << size_A << endl;
+	cout << "GL_MAX_VERTEX_ATTRIBS: " << size_A << endl;
+	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &size_A);
+	cout << "GL_MAX_TEXTURE_SIZE: " << size_A << endl;
+	glGetIntegerv(GL_MAX_VERTEX_UNIFORM_COMPONENTS, &size_A);
+	cout << "GL_MAX_VERTEX_UNIFORM_COMPONENTS: " << size_A << endl;
 	glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS, &size_A);
-	cout << size_A << endl;
+	cout << "GL_MAX_FRAGMENT_UNIFORM_COMPONENTS: " << size_A << endl;
+
 
 	// culling
 	glEnable(GL_CULL_FACE);
@@ -296,21 +306,34 @@ int main() {
 	//glGetProgramiv(program_A, GL_ACTIVE_TEXTURE ,&pv);
 	//cout << "v: " << pv << endl;
 
-
-	//glDrawElementsInstanced()
-
-	//glStencilMask(,)
-	//glStencilFunc(,m,,)
-
-	glUseProgram(program_A);
-	GLint loca = glGetUniformLocation(program_A, "coord");
-	glUniform4f(loca, 0.5, 0.5, 0.5, 1);
-	loca = glGetUniformLocation(program_A, "N");
-	glUniform2f(loca, 0.3, 1.0);
+	//glUseProgram(program_A);
+	//GLint loca = glGetUniformLocation(program_A, "coord");
+	//glUniform4f(loca, 0.5, 0.5, 0.5, 1);
+	//loca = glGetUniformLocation(program_A, "N");
+	//glUniform2f(loca, 0.3, 1.0);
 	
-	//glPixelStorei(,)
+	GLint location_A = glGetUniformLocation(program_A, "coord");
+	glProgramUniform4f(program_A, location_A, 0.5, 0.5, 0.5, 1);
 
-	//glGetUniformBlockIndex()
+	location_A = glGetUniformLocation(program_A, "N");
+	glProgramUniform2f(program_A, location_A, 0.3, 1.0);
+
+	//set<int> c;
+	//c.insert(1);
+	//c.insert(2);
+	//c.insert(6);
+	//c.insert(8);
+	//c.insert(2);
+	//c.insert(9);
+
+	map<string, float> coll;
+
+	auto item = coll.begin();
+	
+	for (auto& elem : coll) {
+		//elem.
+	}
+
 
 	int count;
 
