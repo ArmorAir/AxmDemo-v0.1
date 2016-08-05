@@ -326,21 +326,12 @@ int main() {
 	//c.insert(2);
 	//c.insert(9);
 
-	pair<int, bool> p;
-	//p.first
 
-	std::is_pointer<int>::value
 
-	map<string, float> coll;
 
-	auto item = coll.begin();
 	
-	for (auto& elem : coll) {
-		//elem.
-	}
 
 
-	int count;
 
 	while (!glfwWindowShouldClose(window)) {
 
