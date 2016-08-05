@@ -151,6 +151,7 @@ int main() {
 	glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS, &size_A);
 	cout << "GL_MAX_FRAGMENT_UNIFORM_COMPONENTS: " << size_A << endl;
 
+	
 
 	// culling
 	glEnable(GL_CULL_FACE);
