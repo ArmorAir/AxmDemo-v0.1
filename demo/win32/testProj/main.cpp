@@ -27,7 +27,24 @@ int main() {
 	//GetSystemTimeAsFileTime
 	//GetLocalTime()
 	//GetTickCount()
-	QueryPerformanceCounter();
+
+	LARGE_INTEGER v;
+	double t;
+	double elapsedT;
+
+	QueryPerformanceCounter(&v);
+	t = 1.0 / v.QuadPart;
+	for (size_t i = 0; i < 100; i++) {
+		QueryPerformanceCounter(&v);
+
+		elapsedT = t * v.QuadPart;
+
+		cout.precision(6);
+
+		cout << fixed << showpoint << elapsedT << endl;
+
+	}
+
 
 	system("PAUSE");
 
