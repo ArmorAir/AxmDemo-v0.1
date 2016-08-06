@@ -1,8 +1,13 @@
 #ifndef __AM_AEVENT__
 #define __AM_AEVENT__
 
+//#if defined(_USRDLL)
+//	#define AA_DLL     __declspec(dllexport)
+//#else         /* use a DLL library */
+//	#define AA_DLL     __declspec(dllimport)
+//#endif
 
-class AEvent {
+class  __declspec(dllexport) AEvent {
 
 public:
 
