@@ -52,13 +52,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)tmp\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)tmp\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)tmp\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -73,16 +73,16 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>if not exist "$(ProjectDir)\lib" mkdir "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glew\win32\lib\*.*" "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
+      <Command>if not exist "$(SolutionDir)lib" mkdir "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\glew\win32\lib\*.*" "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\soil\lib\*.lib*" "$(SolutionDir)lib"
 
-xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y
+xcopy "$(SolutionDir)lib\*.dll" "$(OutDir)" /D /Y
 
 </Command>
     </PreLinkEvent>
@@ -108,21 +108,21 @@ xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>if not exist "$(ProjectDir)\lib" mkdir "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glew\win32\lib\*.*" "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(ProjectDir)\lib"
-xcopy /Y /Q "$(ProjectDir)..\..\3rdparty\soil\lib\*.lib*" "$(ProjectDir)\lib"
+      <Command>if not exist "$(SolutionDir)lib" mkdir "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\glew\win32\lib\*.*" "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\glfw3\win32\lib\*.*" "$(SolutionDir)lib"
+xcopy /Y /Q "$(SolutionDir)..\..\3rdparty\soil\lib\*.lib*" "$(SolutionDir)lib"
 
-xcopy "$(ProjectDir)lib\*.dll" "$(OutDir)" /D /Y
+xcopy "$(SolutionDir)lib\*.dll" "$(OutDir)" /D /Y
 
 </Command>
     </PreLinkEvent>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\res"  "$(OutDir)" /D /E /I /F /Y</Command>
+      <Command>xcopy "$(SolutionDir)..\res"  "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

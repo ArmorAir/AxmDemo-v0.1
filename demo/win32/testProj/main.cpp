@@ -14,6 +14,8 @@
 #include <sys/timeb.h>
 #include <time.h>
 #include <Windows.h>
+#include <time.h>
+//#include ""
 
 using namespace std;
 
@@ -22,27 +24,44 @@ using namespace std;
 int main() {
 	
 	cout << "AA" << endl;
-	
+
+
+	//gettimeof
 	
 	//GetSystemTimeAsFileTime
 	//GetLocalTime()
 	//GetTickCount()
 
+	LARGE_INTEGER l;
+	LARGE_INTEGER s;
 	LARGE_INTEGER v;
-	double t;
+	LARGE_INTEGER f;
 	double elapsedT;
+	double t;
+	long la;
+	long lb;
+	//cout << elapsedT << endl;
+	//Sleep(100);
+	
+	QueryPerformanceFrequency(&f);
+	QueryPerformanceCounter(&l);
+	s = l;
 
-	QueryPerformanceCounter(&v);
-	t = 1.0 / v.QuadPart;
-	for (size_t i = 0; i < 100; i++) {
+	//cout << l.QuadPart / 365 / 12 / 24 / 60 << endl;
+	//t = 1.0 / f.QuadPart;
+
+	for (size_t i = 0; i < 15; i++) {
+		
+		Sleep(10);
+
 		QueryPerformanceCounter(&v);
+		elapsedT = (double)(v.QuadPart - l.QuadPart) / f.QuadPart;
 
-		elapsedT = t * v.QuadPart;
+		//cout.precision(6);
 
-		cout.precision(6);
+		cout << "e: " << elapsedT << endl;
 
-		cout << fixed << showpoint << elapsedT << endl;
-
+		l = v;
 	}
 
 
