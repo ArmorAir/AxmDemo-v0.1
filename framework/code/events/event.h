@@ -26,7 +26,6 @@ public:
 	AEvent( char* type = nullptr );
 	~AEvent();
 
-
 	char* getType() const;
 	void* getTarget() const;
 
@@ -37,25 +36,20 @@ protected:
 
 	char* m_type;
 	void* m_target;
-
 };
+
 
 
 class AA_DLL Listener {
 
 public:
-	Listener(void* invoker, int priority);
+	Listener(int priority);
 
-	std::function<void(AEvent*)> m_listener;
-	void* m_invoker;
+	std::function<void(AEvent*)> m_callback;
 	int m_priority;
-
 	Listener* m_prev;
 	Listener* m_next;
 	bool m_delayed;
-
-
-
 };
 
 
@@ -67,11 +61,9 @@ public:
 	EventDispatcher( void* target = nullptr );
 	~EventDispatcher();
 
-	
-	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback, void* invoker = nullptr, int priority = 0);
-	void removeEventListener(Listener* v);
+	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority = 0);
+	void removeEventListener(Listener* listener);
 	void dispatchEvent(AEvent* event);
-
 
 protected:
 
@@ -79,7 +71,6 @@ protected:
 	std::unordered_map<const char*, QueueForListener*> m_lqList;
 
 };
-
 
 
 
@@ -94,9 +85,9 @@ public:
 	QueueForListener();
 	~QueueForListener();
 
-	void doAddListener(Listener* v);
-	void doRemoveListener(Listener* v);
-	void doExecute(AEvent* v);
+	void doAddListener(Listener* listener);
+	void doRemoveListener(Listener* listener);
+	void doExecute(AEvent* listener);
 	void doStopPropagation();
 	void doDispose();
 
@@ -105,8 +96,6 @@ private:
 	Listener* m_begin;
 	Listener* m_end;
 	Listener* m_curr;
-
-
 };
 
 

@@ -33,8 +33,7 @@ void AEvent::doSetTarget( void* target ) {
 
 
 
-Listener::Listener(void* invoker, int priority):
-	m_invoker(invoker),
+Listener::Listener(int priority):
 	m_priority(priority),
 	m_prev(nullptr),
 	m_next(nullptr),
@@ -62,26 +61,24 @@ EventDispatcher::~EventDispatcher() {
 
 }
 
-Listener* EventDispatcher::addEventListener(const char* type, std::function<void(AEvent*)> callback, void* invoker, int priority) {
-	Listener* listener_A = new Listener(std::move(callback), invoker, priority);
+Listener* EventDispatcher::addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority) {
+	Listener* listener_A = new Listener(priority);
+	listener_A->m_callback = std::move(callback);
 	QueueForListener* queue_A = nullptr;
-
 	auto itr = m_lqList.find(type);
 	if (itr == m_lqList.end()) {
 		queue_A = new QueueForListener();
 		m_lqList.insert(std::make_pair(type, queue_A));
 	}
-	else
-	{
+	else {
 		queue_A = itr->second;
 	}
-
 	queue_A->doAddListener(listener_A);
 
 	return listener_A;
 }
 
-void EventDispatcher::removeEventListener(Listener* v) {
+void EventDispatcher::removeEventListener(Listener* listener) {
 
 
 
@@ -109,7 +106,7 @@ void EventDispatcher::dispatchEvent(AEvent* event) {
 /*QueueForListener*/
 
 QueueForListener::QueueForListener() :
-	m_begin(new Listener(nullptr, 0)),
+	m_begin(new Listener(0)),
 	m_curr(nullptr),
 	m_end(nullptr)
 {
@@ -166,7 +163,7 @@ void QueueForListener::doExecute(AEvent* event) {
 			m_curr->m_delayed = false;
 		}
 		else {
-			m_curr->m_listener(event);
+			m_curr->m_callback(event);
 		}
 		m_curr = m_curr ? m_curr->m_next : nullptr;
 	}
