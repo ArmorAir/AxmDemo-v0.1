@@ -33,20 +33,7 @@ void AEvent::doSetTarget( void* target ) {
 
 
 
-
-Listener::Listener() :
-	m_invoker(nullptr),
-	m_priority(0),
-	m_prev(nullptr),
-	m_next(nullptr),
-	m_delayed(false)
-{
-
-
-}
-
-Listener::Listener(std::function<void(AEvent*)> listener, void* invoker, int priority):
-	m_listener(listener),
+Listener::Listener(void* invoker, int priority):
 	m_invoker(invoker),
 	m_priority(priority),
 	m_prev(nullptr),
@@ -122,7 +109,7 @@ void EventDispatcher::dispatchEvent(AEvent* event) {
 /*QueueForListener*/
 
 QueueForListener::QueueForListener() :
-	m_begin(new Listener),
+	m_begin(new Listener(nullptr, 0)),
 	m_curr(nullptr),
 	m_end(nullptr)
 {

@@ -9,7 +9,9 @@ public:
 		std::cout << "A::func_A" << std::endl;
 	}
 
-
+	static void func_S(AEvent* evt) {
+		std::cout << "A::func_S" << std::endl;
+	}
 };
 
 void testEvent() {
@@ -23,6 +25,8 @@ void testEvent() {
 
 
 	ed->addEventListener("AA", std::bind(&EvtA::func_A, a, std::placeholders::_1), a, 1);
+
+	ed->addEventListener("AA", &EvtA::func_S);
 
 	ed->dispatchEvent(evt);
 

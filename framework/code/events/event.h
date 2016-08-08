@@ -44,8 +44,7 @@ protected:
 class AA_DLL Listener {
 
 public:
-	Listener();
-	Listener(std::function<void(AEvent*)> listener, void* invoker, int priority);
+	Listener(void* invoker, int priority);
 
 	std::function<void(AEvent*)> m_listener;
 	void* m_invoker;
