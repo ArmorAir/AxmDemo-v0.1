@@ -10,4 +10,15 @@
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="testFunction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="testTime.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="testEvent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

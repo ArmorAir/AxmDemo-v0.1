@@ -1,0 +1,14 @@
+#include <iostream>
+#include <functional>
+
+void testFunction() {
+
+	void fu(int a) {
+		cout << "A: " << a << endl;
+	};
+
+	std::function<void(int)> listener;
+
+
+
+}
