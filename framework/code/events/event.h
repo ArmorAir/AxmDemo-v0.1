@@ -6,13 +6,7 @@
 //#include <string>
 #include <functional>
 
-
-#if defined(_USRDLL)
-	#define AA_DLL     __declspec(dllexport)
-#else
-	#define AA_DLL     __declspec(dllimport)
-#endif
-
+#include "cross\define.h"
 
 
 class QueueForListener;
@@ -23,10 +17,10 @@ class AA_DLL AEvent {
 
 public:
 
-	AEvent( char* type = nullptr );
-	~AEvent();
+	AEvent( const char* type );
+	virtual ~AEvent();
 
-	char* getType() const;
+	const char* getType() const;
 	void* getTarget() const;
 
 	void doSetType(char* type);
@@ -34,7 +28,7 @@ public:
 
 protected:
 
-	char* m_type;
+	const char* m_type;
 	void* m_target;
 };
 
@@ -58,7 +52,8 @@ class AA_DLL EventDispatcher {
 
 public:
 
-	EventDispatcher( void* target = nullptr );
+	EventDispatcher();
+	EventDispatcher( void* target );
 	~EventDispatcher();
 
 	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority = 0);
@@ -68,7 +63,7 @@ public:
 protected:
 
 	void* m_target;
-	std::unordered_map<const char*, QueueForListener*> m_lqList;
+	std::unordered_map<const char*, QueueForListener*> m_lqList{};
 
 };
 

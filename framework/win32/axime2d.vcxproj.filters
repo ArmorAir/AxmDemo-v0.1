@@ -4,14 +4,26 @@
     <Filter Include="events">
       <UniqueIdentifier>{c6b5b92a-b2d8-4ea4-86ef-3d19e3a2c257}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cross">
+      <UniqueIdentifier>{033989b9-ab6e-4392-8834-d2528d3864b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\events\event.h">
       <Filter>events</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\events\touchEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\define.h">
+      <Filter>cross</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\events\event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\events\touchEvent.cpp">
       <Filter>events</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "events\event.h"
+#include "events\touchEvent.h"
 
 class EvtA {
 
@@ -10,6 +11,9 @@ public:
 	}
 
 	static void func_S(AEvent* evt) {
+
+		std::cout <<  ((ATouchEvent*)evt)->getTouch() << std::endl;
+
 		std::cout << "A::func_S" << std::endl;
 	}
 };
@@ -17,14 +21,16 @@ public:
 void testEvent() {
 	EvtA* a = new EvtA;
 
-	AEvent* evt = new AEvent("AA");
+	AEvent* evt = new ATouchEvent("AA");
+	
+
 	EventDispatcher* ed = new EventDispatcher;
 	ed->addEventListener("AA", [](AEvent*)->void {
 		std::cout << "AA!!" << std::endl;
 	});
 
 
-	ed->addEventListener("AA", std::bind(&EvtA::func_A, a, std::placeholders::_1), a, 1);
+	ed->addEventListener("AA", std::bind(&EvtA::func_A, a, std::placeholders::_1), 1);
 
 	ed->addEventListener("AA", &EvtA::func_S);
 

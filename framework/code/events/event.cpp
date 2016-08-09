@@ -3,10 +3,10 @@
 
 
 
-AEvent::AEvent( char* type ): 
-	m_type(type) 
+AEvent::AEvent( const char* type ):
+	m_type(type),
+	m_target(nullptr)
 {
-
 
 }
 
@@ -15,7 +15,7 @@ AEvent::~AEvent() {
 
 }
 
-char* AEvent::getType() const {
+const char* AEvent::getType() const {
 	return m_type;
 }
 
@@ -46,12 +46,15 @@ Listener::Listener(int priority):
 
 }
 
+EventDispatcher::EventDispatcher():
+	EventDispatcher(nullptr)
+{
 
+}
 
 EventDispatcher::EventDispatcher( void* target ):
 	m_target(target)
 {
-
 
 }
 
