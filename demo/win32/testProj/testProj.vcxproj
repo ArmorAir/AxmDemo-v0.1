@@ -104,6 +104,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="testEnum.h" />
     <ClInclude Include="testEvent.h" />
     <ClInclude Include="testFunction.h" />
     <ClInclude Include="testTime.h" />
