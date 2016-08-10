@@ -11,8 +11,8 @@ public:
 	}
 
 	static void func_S(AEvent* evt) {
-
-		std::cout <<  ((ATouchEvent*)evt)->getTouch() << std::endl;
+		std::cout << evt->toString() << std::endl;
+		std::cout <<  static_cast<ATouchEvent*>(evt)->toString() << std::endl;
 
 		std::cout << "A::func_S" << std::endl;
 	}

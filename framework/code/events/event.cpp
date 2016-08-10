@@ -12,7 +12,6 @@ AEvent::AEvent( const char* type ):
 
 AEvent::~AEvent() {
 
-
 }
 
 const char* AEvent::getType() const {
@@ -21,6 +20,10 @@ const char* AEvent::getType() const {
 
 void* AEvent::getTarget() const {
 	return m_target;
+}
+
+const char* AEvent::toString() const {
+	return "aevent";
 }
 
 void AEvent::doSetType(char* type) {

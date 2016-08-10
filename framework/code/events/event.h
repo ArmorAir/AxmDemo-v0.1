@@ -22,6 +22,7 @@ public:
 
 	const char* getType() const;
 	void* getTarget() const;
+	virtual const char* AEvent::toString() const;
 
 	void doSetType(char* type);
 	void doSetTarget( void* target );

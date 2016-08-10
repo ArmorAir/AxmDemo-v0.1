@@ -9,6 +9,6 @@ ATouchEvent::ATouchEvent(const char* type) :
 	m_type;
 }
 
-int ATouchEvent::getTouch() {
-	return 333;
+const char* ATouchEvent::toString() const {
+	return "atouchevent";
 }

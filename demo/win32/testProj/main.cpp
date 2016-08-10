@@ -8,9 +8,9 @@ int main() {
 	
 	//testTime();
 	//testFunction();
-	testEnum();
+	//testEnum();
 
-	//testEvent();
+	testEvent();
 
 
 	system("PAUSE");

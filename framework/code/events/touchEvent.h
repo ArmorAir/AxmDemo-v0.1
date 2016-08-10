@@ -10,7 +10,7 @@ public:
 
 	ATouchEvent( const char* type );
 
-	int getTouch();
+	virtual const char* toString() const;
 
 };
 
