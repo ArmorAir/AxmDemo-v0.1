@@ -1,0 +1,43 @@
+
+
+F1: 列出成员(快速提示)
+F2: 转到定义(快速查找引用)
+
+F5: 调试，逐语句(单步跳入)
+F6: 调试，逐过程(单步跳过)
+
+F9 / Ctrl + Enter: 开始调试
+F10: 停止调试
+
+Ctrl + (Shift) + Q: 添加/移除注释
+Tab + (Shift): 缩进 / 缩回
+
+Ctrl + A: 全选
+Ctrl + S: 保存
+Ctrl + D: 快速复制当前行
+Ctrl + Shift + D: 快速删除当前行
+Ctrl + (shift) + F: 查找(全局)
+Ctrl + (shift) + H: 替换(全局)
+
+Ctrl + Z: 撤销
+Ctrl + X: 剪切
+Ctrl + C: 复制
+Ctrl + V: 粘贴
+
+: 调试启动
+Alt + Enter: 快速查看项目属性
+
+Ctrl + B: 构建/生成项目
+
+
+
+
+理想的编辑器:
+- 配置的导入导出
+
+
+
+
+
+
+
