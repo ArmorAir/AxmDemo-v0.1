@@ -3,14 +3,18 @@
 #include "testEnum.h"
 
 #include "testEvent.h"
+#include "testString.h"
 
 int main() {
 	
-	//testTime();
+	//testTime(); 
 	//testFunction();
 	//testEnum();
 
-	testEvent();
+	//testEvent();
+	testString();
+
+
 
 
 	system("PAUSE");
