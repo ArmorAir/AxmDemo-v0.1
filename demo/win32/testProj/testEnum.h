@@ -42,9 +42,42 @@ public:
 		_cc
 	};
 
+	void doThings() {
+		std::cout << "do A" << std::endl;
+	}
+
+};
+
+class TypeB:public TypeA{
+
+public:
+
+	void doThings() {
+		TypeA::doThings();
+		std::cout << "do B" << std::endl;
+	}
+
+
+
+};
+
+
+
+// 这样定义的enum，意思是仅给出了一组常量的定义！
+// 然后在程序中就可以直接使用这些常量符号了，可以赋值、比较判定、用于返回值等等。。。
+
+enum {
+
+	AAA,
+	BBB
 };
 
 void testEnum() {
+
+	using namespace std;
+
+	TypeA* b = new TypeB;
+	b->doThings();
 
 	// enum
 
@@ -71,4 +104,6 @@ void testEnum() {
 	std::cout << static_cast<int>(Enum_BB::_222) << static_cast<int>(Enum_BB::_333) << std::endl; // 66, 97
 	//std::cout << (Enum_B::_1 == Enum_AA::_c) << std::endl; // false
 
+	cout << AAA << endl;
+	cout << BBB << endl;
 }

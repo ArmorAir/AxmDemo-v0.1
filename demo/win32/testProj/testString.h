@@ -19,8 +19,7 @@ void testString() {
 	const char* cPtr_B = cArr;
 	//const char cArr_B[] = cPtr_A;
 
-
-	//strcpy(c)
+	
 
 	cout << sA.c_str() << endl;
 	//int i = atoi(c);
@@ -37,21 +36,13 @@ void testString() {
 
 	//s[2] = 'b';
 	cout << s.size() << "..." << s[2] << "..." << s.front() << endl;
-	cout << (s.find('h')==-1) << endl;
+	cout << (s.find('h') == -1) << endl;
 	cout << s.find_first_not_of("adcd") << endl;
 	
-	
-	string::npos;
-	string::size_type l;
 
-	s.size();
-	s.length();
-
-	s.c_str();
-
-	
-	
-
+	/////////////////////////////////
+	// c-str
+	/////////////////////////////////
 
 	//s.find()
 
@@ -62,15 +53,15 @@ void testString() {
 
 
 
-	// memcpy
+	//memcpy
 
 
 
-	// memmove
+		// memmove
 
 
 
-	// memset
+		// memset
 
 
 

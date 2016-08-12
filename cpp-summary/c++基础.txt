@@ -193,10 +193,10 @@ ps.
 3. non-const引用不能绑定const值，而const引用则能绑定non-const值，因为const引用可增加安全性。
 
 涉及到指针的const:
-- 指向变量不变: const char* p1 / char const* p2 ---> const位于星号左侧，则const修饰指针所指向变量(内容)。
+- 指向变量不变: const char* p1 / char const* p2 ---> const位于星号左侧，则const修饰指针所指向变量(此时const与char*是"连在一起"的)。
 - 指针本身不变: char* const p3                  ---> const位于星号右侧，则const修饰指针本身。
 - 两者都不变:   const char* const p4
-ps. 左变量，右指针。
+ps. const位置: 左变量，右指针。
 
 类相关:
 - const成员函数不改变对象的成员变量(类名::func(形参) const)
@@ -366,8 +366,9 @@ void update() { A::update(); ... }
 virtual void update() { } 
 
 ps. 
-1. 父类中方法声明为virtual，该方法在子类中自动就是virtual...!!
+1. 父类中方法声明为virtual，该方法在子类中自动就是virtual...!!（子类中还是要加上virtual保持一致）
 2. 除了构造函数外，其他函数都可能是虚函数
+3. virtual针对指针类型对象的动态绑定，B继承自A，A* a = new B;如果为non-virtual方法，即使B中有重写，调用的也是A中的定义。
 
 
 
