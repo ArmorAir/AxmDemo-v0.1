@@ -6,8 +6,10 @@ class EvtA {
 
 public:
 
+	int i = 33;
+
 	void func_A(AEvent* evt) {
-		std::cout << "A::func_A" << std::endl;
+		std::cout << "A::func_A" << i << std::endl;
 	}
 
 	static void func_S(AEvent* evt) {

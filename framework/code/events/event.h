@@ -49,6 +49,9 @@ public:
 
 
 
+// 1. 每一个callback产生一个Listener，可通过保存Listener的对象指针来对指定的Listener进行删除
+// 2. callback可能包含function对象和target指针，所以不会对callback进行重复检测，也就是说相同的callback可重复生成Listener而不会"覆盖"
+
 class AA_DLL EventDispatcher {
 
 public:
@@ -57,9 +60,12 @@ public:
 	EventDispatcher( void* target );
 	~EventDispatcher();
 
-	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority = 0);
+	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback);
+	Listener* addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority);
 	void removeEventListener(Listener* listener);
+	bool hasEventListener(const char* type);
 	void dispatchEvent(AEvent* event);
+	void dispatch(const char* type);
 
 protected:
 

@@ -9,9 +9,9 @@ int main() {
 	
 	//testTime(); 
 	//testFunction();
-	testEnum();
+	//testEnum();
 
-	//testEvent();
+	testEvent();
 	//testString();
 
 

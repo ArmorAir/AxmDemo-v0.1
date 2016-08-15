@@ -63,8 +63,10 @@ EventDispatcher::EventDispatcher( void* target ):
 
 EventDispatcher::~EventDispatcher() {
 
+}
 
-
+Listener* EventDispatcher::addEventListener(const char* type, std::function<void(AEvent*)> callback) {
+	return this->addEventListener(type, callback, 0);
 }
 
 Listener* EventDispatcher::addEventListener(const char* type, std::function<void(AEvent*)> callback, int priority) {
@@ -87,8 +89,10 @@ Listener* EventDispatcher::addEventListener(const char* type, std::function<void
 void EventDispatcher::removeEventListener(Listener* listener) {
 
 
+}
 
-
+bool EventDispatcher::hasEventListener(const char* type) {
+	return false;
 }
 
 void EventDispatcher::dispatchEvent(AEvent* event) {
@@ -107,6 +111,9 @@ void EventDispatcher::dispatchEvent(AEvent* event) {
 
 }
 
+void EventDispatcher::dispatch(const char* type) {
+
+}
 
 
 /*QueueForListener*/
