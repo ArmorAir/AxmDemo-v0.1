@@ -36,6 +36,8 @@ class TypeA {
 
 public:
 
+	static int i;
+
 	enum class Enum_C {
 		_aa,
 		_bb,
@@ -75,6 +77,7 @@ enum {
 void testEnum() {
 
 	using namespace std;
+
 
 	TypeA* b = new TypeB;
 	b->doThings();
