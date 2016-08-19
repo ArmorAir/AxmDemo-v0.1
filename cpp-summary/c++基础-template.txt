@@ -1,0 +1,80 @@
+
+==================================================
+template(generic)
+--------------------------------------------------
+1. 模板在代入时才能检查语法是否正确(涉及到运算符重载....)
+2. 通常定义在头文件里
+
+类模板:
+template<class/typename T, int len = 1024>
+class A {
+  // T为类型参数，len为非类型参数(可提高缺省实参)
+}
+例子:
+// stack.h
+template <class T, int LEN> class Stack {
+  public:
+    Stack();
+    ~Stack();
+    void push(T t);
+    T pop();
+    bool isEmpty();
+  private:
+    T *m_pt;
+    int m_maxSize;
+    int m_size;
+};
+# include "stack.cpp"
+// stack.cpp
+template<class T, int LEN>
+Stack<T>::Stack() {
+  m_maxSize = LEN;
+  m_size = 0;
+  m_pt = new T(m_maxSize);
+}
+template<class T, int LEN>
+Stack<T>::~Stack() {
+  delete [] m_pt;
+}
+...
+
+方法模板:
+一个类没有模板参数，但是成员函数有模板参数，是可行的。
+class Util {
+  public:
+    template <class T> 
+    static bool equal( T t1, T t2 ) {
+      return t1 == t2;
+    }
+    template <class T> 
+    bool equal( T t1, T t2 ) {
+      return t1 == t2;
+    }
+};
+int main() {
+  Util util;
+  int a = 1, b = 2;
+  util.equal<int>(1, 2);
+  Util::equal<int>(1, 2);
+  return 0;
+}
+
+泛型限制:(类型特化)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -262,8 +262,11 @@ extern "C" { #include "some_c.h" } ¾ÍÊÇ¸æËßc++±àÒëÆ÷£¬°´ÕÕcµÄ·½Ê½±àÒë£¬²»½øĞĞÖØÃ
 struct(½á¹¹) / enum(Ã¶¾Ù) / union(ÁªºÏ)
 --------------------------------------------------
 * struct:
-Óëclass¾ßÓĞÏàÍ¬¹¦ÄÜ£¬ÓÃ·¨ÍêÈ«ÏàÍ¬¡£Î¨Ò»Çø±ğÊÇ£¬structÖĞÄ¬ÈÏÎªpublicÈ¨ÏŞ¡£
-// StructA s(²»ÓÃÏÔÊ¾µ÷ÓÃ¹¹Ôì·½·¨Ò²ĞĞ£¬class²»¿É!!!!!) »ò StructA s = {...}
+    Óëclass¾ßÓĞÏàÍ¬¹¦ÄÜ£¬ÓÃ·¨ÍêÈ«ÏàÍ¬¡£Î¨Ò»Çø±ğÊÇ£¬structÖĞÄ¬ÈÏÎªpublicÈ¨ÏŞ¡£
+    ÈıÖÖ¶¨Òå·½Ê½:
+	1. struct stuff {...}
+	2. struct stuff {...} a;
+	3. struct {...} a;£¨Ö»ÓÃÒ»¸ö±äÁ¿a£¬¶ø²»ÔÙĞèÒªÓÃ£©
 
 * enum:(enum A { a=1, b, c=5, d })
 Èç¹ûÃ¶¾ÙÃ»ÓĞ³õÊ¼»¯£¬Ôò´ÓµÚÒ»¸ö±êÊ¶·û¿ªÊ¼ÒÀ´Î¸³Öµ0, 1, 2...ÆäºóÎ´¸³Öµ³ÉÔ±ÒÀ´Î¼Ó1(b=2, d=6)
@@ -497,79 +500,6 @@ ps.
 1. ¾¡Á¿ÓÃÇ°ÖÃÉùÃ÷´úÌæ#include()!!Ìõ¼şÊÇÊ¹ÓÃÖ¸Õë»òÒıÓÃ!!
 2. Ç°Ìá: ÎŞĞèÁË½âÀàµÄ´óĞ¡»ò¾ßÌå³ÉÔ±£¬Èç·µ»ØÖµ»ò²ÎÊı!!Ç°ÖÃÉùÃ÷Ğ´ÔÚÄÄÀï¶¼ĞĞ£¬µ«Ò»°ãĞ´ÔÚhÎÄ¼şÖĞµÄ½ÏÇ°²¿·Ö£¬cppÎÄ¼şÖĞÉæ¼°¹¹Ôì»ò³ÉÔ±µ÷ÓÃµÈÔÙ°üº¬Ïà¹ØµÄhÎÄ¼ş!!
 3. Ö»ÊÇ¸æËß±àÒëÆ÷ÕâÊÇÒ»¸öÀàĞÍ£¬µ«ÎŞ·¨¸æÖªÀàĞÍµÄ´óĞ¡£¬³ÉÔ±µÈ¾ßÌåÄÚÈİ¡£¶øÍ·ÎÄ¼ş°üº¬È«²¿ÄÚÈİ¡£
-
-
-
-==================================================
-template(generic)
---------------------------------------------------
-1. Ä£°åÔÚ´úÈëÊ±²ÅÄÜ¼ì²éÓï·¨ÊÇ·ñÕıÈ·(Éæ¼°µ½ÔËËã·ûÖØÔØ....)
-2. Í¨³£¶¨ÒåÔÚÍ·ÎÄ¼şÀï
-
-ÀàÄ£°å:
-template<class/typename T, int len = 1024>
-class A {
-  // TÎªÀàĞÍ²ÎÊı£¬lenÎª·ÇÀàĞÍ²ÎÊı(¿ÉÌá¸ßÈ±Ê¡Êµ²Î)
-}
-Àı×Ó:
-// stack.h
-template <class T, int LEN> class Stack {
-  public:
-    Stack();
-    ~Stack();
-    void push(T t);
-    T pop();
-    bool isEmpty();
-  private:
-    T *m_pt;
-    int m_maxSize;
-    int m_size;
-};
-# include "stack.cpp"
-// stack.cpp
-template<class T, int LEN>
-Stack<T>::Stack() {
-  m_maxSize = LEN;
-  m_size = 0;
-  m_pt = new T(m_maxSize);
-}
-template<class T, int LEN>
-Stack<T>::~Stack() {
-  delete [] m_pt;
-}
-...
-
-·½·¨Ä£°å:
-Ò»¸öÀàÃ»ÓĞÄ£°å²ÎÊı£¬µ«ÊÇ³ÉÔ±º¯ÊıÓĞÄ£°å²ÎÊı£¬ÊÇ¿ÉĞĞµÄ¡£
-class Util {
-  public:
-    template <class T> 
-    static bool equal( T t1, T t2 ) {
-      return t1 == t2;
-    }
-    template <class T> 
-    bool equal( T t1, T t2 ) {
-      return t1 == t2;
-    }
-};
-int main() {
-  Util util;
-  int a = 1, b = 2;
-  util.equal<int>(1, 2);
-  Util::equal<int>(1, 2);
-  return 0;
-}
-
-·ºĞÍÏŞÖÆ:(ÀàĞÍÌØ»¯)
-
-
-
-
-
-
-
-
-
 
 
 

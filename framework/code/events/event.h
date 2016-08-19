@@ -34,6 +34,7 @@ protected:
 };
 
 
+// 一个Listener是对一个function对象的次级封装
 
 class AA_DLL Listener {
 
@@ -42,9 +43,10 @@ public:
 
 	std::function<void(AEvent*)> m_callback;
 	int m_priority;
+	bool m_delayed;
 	Listener* m_prev;
 	Listener* m_next;
-	bool m_delayed;
+	
 };
 
 
