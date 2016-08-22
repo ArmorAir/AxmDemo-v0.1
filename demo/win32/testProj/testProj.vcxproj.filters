@@ -26,5 +26,8 @@
     <ClInclude Include="testString.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="testTemplate.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

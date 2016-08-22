@@ -108,6 +108,7 @@
     <ClInclude Include="testEvent.h" />
     <ClInclude Include="testFunction.h" />
     <ClInclude Include="testString.h" />
+    <ClInclude Include="testTemplate.h" />
     <ClInclude Include="testTime.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -9,6 +9,10 @@
 #include "cross\define.h"
 
 
+
+
+// 提取出EventData概念，每个可触发事件对象，都必须对应一个XXXXEventData，封装包括可触发和侦听的事件类型
+
 class QueueForListener;
 
 
@@ -16,6 +20,7 @@ class QueueForListener;
 class AA_DLL AEvent {
 
 public:
+
 
 	AEvent( const char* type );
 	virtual ~AEvent();
@@ -91,7 +96,7 @@ public:
 
 	void doAddListener(Listener* listener);
 	void doRemoveListener(Listener* listener);
-	void doExecute(AEvent* listener);
+	void doExecute(AEvent* event);
 	void doStopPropagation();
 	void doDispose();
 

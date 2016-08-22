@@ -4,6 +4,7 @@
 
 #include "testEvent.h"
 #include "testString.h"
+#include "testTemplate.h"
 
 int main() {
 	
@@ -11,10 +12,10 @@ int main() {
 	//testFunction();
 	//testEnum();
 
-	testEvent();
+	//testEvent();
 	//testString();
 
-
+	testTemplate();
 
 
 	system("PAUSE");
