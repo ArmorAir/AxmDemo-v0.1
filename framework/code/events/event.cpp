@@ -11,13 +11,13 @@ Listener::Listener(int priority) :
 
 }
 
-
-
-AEvent::AEvent(void* target):
-	m_target(target),
+AEvent::AEvent(void* target) :
 	m_begin(new Listener(0)),
 	m_curr(nullptr),
-	m_end(nullptr)
+	m_end(nullptr),
+	m_target(target),
+	m_tag(nullptr),
+	m_userData(nullptr)
 {
 
 }
@@ -85,12 +85,8 @@ void* AEvent::getTarget() const {
 	return m_target;
 }
 
-void* AEvent::getUserData() const {
-	return m_userData;
-}
-
-void AEvent::setUserData(void* v) {
-	m_userData = v;
+void AEvent::setTarget(void* v) {
+	m_target = v;
 }
 
 const char* AEvent::getTag() const {
@@ -99,6 +95,14 @@ const char* AEvent::getTag() const {
 
 void AEvent::setTag(const char* v) {
 	m_tag = v;
+}
+
+void* AEvent::getUserData() const {
+	return m_userData;
+}
+
+void AEvent::setUserData(void* v) {
+	m_userData = v;
 }
 
 void AEvent::stopPropagation() {

@@ -42,7 +42,6 @@ void testEvent() {
 	touchEvt->trigger();
 
 
-	//std::cout << e.getType() << std::endl;
 
 
 

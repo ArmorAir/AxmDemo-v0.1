@@ -7,6 +7,7 @@
 #include "cross\define.h"
 
 
+
 class Listener;
 
 // 事件对象，可对其创建侦听器，或将其触发
@@ -28,17 +29,20 @@ public:
 
 	// 目标
 	void* getTarget() const;
-
-	// 用户数据
-	void* getUserData() const;
-	void setUserData(void* v);
+	void setTarget(void* v);
 
 	// 标签
 	const char* getTag() const;
 	void setTag(const char* v);
 
+	// 用户数据
+	void* getUserData() const;
+	void setUserData(void* v);
+
 	// 停止传播
 	void stopPropagation();
+
+
 	void dispose();
 
 protected:
@@ -47,9 +51,9 @@ protected:
 	Listener* m_end;
 	Listener* m_curr;
 	void* m_target;
-	void* m_userData;
 	const char* m_tag;
-
+	void* m_userData;
+	
 };
 
 // 一个Listener是对一个function对象的次级封装
