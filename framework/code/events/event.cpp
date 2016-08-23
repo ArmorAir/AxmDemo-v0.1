@@ -16,7 +16,6 @@ AEvent::AEvent(void* target) :
 	m_curr(nullptr),
 	m_end(nullptr),
 	m_target(target),
-	m_tag(nullptr),
 	m_userData(nullptr)
 {
 
@@ -87,14 +86,6 @@ void* AEvent::getTarget() const {
 
 void AEvent::setTarget(void* v) {
 	m_target = v;
-}
-
-const char* AEvent::getTag() const {
-	return m_tag;
-}
-
-void AEvent::setTag(const char* v) {
-	m_tag = v;
 }
 
 void* AEvent::getUserData() const {

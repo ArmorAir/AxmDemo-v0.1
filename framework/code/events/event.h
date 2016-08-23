@@ -31,10 +31,6 @@ public:
 	void* getTarget() const;
 	void setTarget(void* v);
 
-	// 标签
-	const char* getTag() const;
-	void setTag(const char* v);
-
 	// 用户数据
 	void* getUserData() const;
 	void setUserData(void* v);
@@ -51,7 +47,6 @@ protected:
 	Listener* m_end;
 	Listener* m_curr;
 	void* m_target;
-	const char* m_tag;
 	void* m_userData;
 	
 };
