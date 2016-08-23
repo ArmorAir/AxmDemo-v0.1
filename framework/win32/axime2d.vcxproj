@@ -91,15 +91,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\code\display\node.cpp" />
     <ClCompile Include="..\code\events\event.cpp" />
     <ClCompile Include="..\code\events\touchEvent.cpp" />
-    <ClCompile Include="node.cpp" />
+    <ClCompile Include="..\code\window\touch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\cross\define.h" />
+    <ClInclude Include="..\code\display\node.h" />
     <ClInclude Include="..\code\events\event.h" />
     <ClInclude Include="..\code\events\touchEvent.h" />
-    <ClInclude Include="node.h" />
+    <ClInclude Include="..\code\window\touch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

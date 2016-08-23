@@ -2,42 +2,44 @@
 #include "events\event.h"
 #include "events\touchEvent.h"
 
-class EvtA {
+class ObjA {
 
 public:
 
 	int i = 33;
 
-	void func_A(AEvent* evt) {
-		std::cout << "A::func_A" << i << std::endl;
+	void func_m(AEvent* evt) {
+		std::cout << "A::func_m::(i)"<< i << std::endl;
 	}
 
-	static void func_S(AEvent* evt) {
-		std::cout << evt->toString() << std::endl;
-		std::cout <<  static_cast<ATouchEvent*>(evt)->toString() << std::endl;
-
-		std::cout << "A::func_S" << std::endl;
+	static void func_s(AEvent* evt) {
+		
+		std::cout << "A::func_s" << std::endl;
 	}
 };
 
 void testEvent() {
-	EvtA* a = new EvtA;
+	ObjA* a = new ObjA;
 
-	AEvent* evt = new ATouchEvent("AA");
+	AEvent* evt = new AEvent();
 	
-
-	EventDispatcher* ed = new EventDispatcher;
-	ed->addEventListener("AA", [](AEvent*)->void {
-		std::cout << "AA!!" << std::endl;
+	evt->createListener([](AEvent* v)->void {
+		std::cout << "lambda::" << v->getTag() << std::endl;
+		//v->stopPropagation();
 	});
-
-
-	ed->addEventListener("AA", std::bind(&EvtA::func_A, a, std::placeholders::_1), 1);
-
-	ed->addEventListener("AA", &EvtA::func_S);
-
-	ed->dispatchEvent(evt);
-
+	evt->createListener(std::bind(&ObjA::func_m, a, std::placeholders::_1), 1);
+	evt->createListener(&ObjA::func_s);
+	evt->setTag("AAA");
+	evt->trigger();
+	
+	ATouchEvent* touchEvt = new ATouchEvent;
+	auto lamb_A = [](AEvent* v)-> void {
+		std::cout << v->getTag() << std::endl;
+		std::cout << "lamb: " << typeid(v).name() << std::endl;
+	};
+	touchEvt->createListener(lamb_A);
+	touchEvt->setTag("TTT");
+	touchEvt->trigger();
 
 
 	//std::cout << e.getType() << std::endl;

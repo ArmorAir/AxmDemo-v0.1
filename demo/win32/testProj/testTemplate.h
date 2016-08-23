@@ -9,11 +9,7 @@ void func(T v) {
 }
 
 void testTemplate() {
-
-
-	func(AEvent("A"));
-	func(ATouchEvent("AA"));
-
+	
 
 
 

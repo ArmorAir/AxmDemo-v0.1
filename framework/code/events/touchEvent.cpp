@@ -3,12 +3,9 @@
 
 
 
-ATouchEvent::ATouchEvent(const char* type) :
-	AEvent(type)
-{
-	m_type;
-}
 
-const char* ATouchEvent::toString() const {
-	return "atouchevent";
+
+
+Touch* ATouchEvent::getTouch() const {
+	return m_touch;
 }

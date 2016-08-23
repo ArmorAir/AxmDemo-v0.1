@@ -2,15 +2,21 @@
 #define __AA_TOUCH_EVENT__
 
 #include "event.h"
-
+#include "cross\define.h"
+#include "window\touch.h"
 
 class AA_DLL ATouchEvent : public AEvent {
 
 public:
 
-	ATouchEvent( const char* type );
+	Touch* getTouch() const;
 
-	virtual const char* toString() const;
+
+private:
+
+	Touch* m_touch;
+
+
 
 };
 
@@ -20,4 +26,4 @@ public:
 
 
 
-#endif // !__AA_TOUCH_EVENT__
+#endif

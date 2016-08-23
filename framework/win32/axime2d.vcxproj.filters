@@ -8,7 +8,10 @@
       <UniqueIdentifier>{033989b9-ab6e-4392-8834-d2528d3864b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="display">
-      <UniqueIdentifier>{6d581c8f-3e64-481b-9c19-df1bb2a15616}</UniqueIdentifier>
+      <UniqueIdentifier>{d3b740a6-7438-40f4-a0cd-659ce0643b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window">
+      <UniqueIdentifier>{7e8c8bb5-6541-4905-8013-8366ed9f3f89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,8 +24,11 @@
     <ClInclude Include="..\code\cross\define.h">
       <Filter>cross</Filter>
     </ClInclude>
-    <ClInclude Include="node.h">
+    <ClInclude Include="..\code\display\node.h">
       <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\window\touch.h">
+      <Filter>window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -32,8 +38,11 @@
     <ClCompile Include="..\code\events\touchEvent.cpp">
       <Filter>events</Filter>
     </ClCompile>
-    <ClCompile Include="node.cpp">
+    <ClCompile Include="..\code\display\node.cpp">
       <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\window\touch.cpp">
+      <Filter>window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

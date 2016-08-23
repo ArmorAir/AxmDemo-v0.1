@@ -12,10 +12,10 @@ int main() {
 	//testFunction();
 	//testEnum();
 
-	//testEvent();
+	testEvent();
 	//testString();
 
-	testTemplate();
+	//testTemplate();
 
 
 	system("PAUSE");
