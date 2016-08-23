@@ -1,11 +1,11 @@
-#ifndef __AA_TOUCH__
-#define __AA_TOUCH__
+#ifndef __AM_TOUCH__
+#define __AM_TOUCH__
+
+#include "cross\define.h"
 
 
 
-
-
-class Touch {
+class AM_DLL Touch {
 
 public:
 

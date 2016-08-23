@@ -91,17 +91,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\code\animate\tween.cpp" />
+    <ClCompile Include="..\code\axime.cpp" />
+    <ClCompile Include="..\code\display\fusion.cpp" />
+    <ClCompile Include="..\code\display\image.cpp" />
     <ClCompile Include="..\code\display\node.cpp" />
     <ClCompile Include="..\code\events\event.cpp" />
     <ClCompile Include="..\code\events\touchEvent.cpp" />
+    <ClCompile Include="..\code\gesture\gesture.cpp" />
+    <ClCompile Include="..\code\logging\log.cpp" />
+    <ClCompile Include="..\code\math\math.cpp" />
+    <ClCompile Include="..\code\resource\resource.cpp" />
+    <ClCompile Include="..\code\ticking\tick.cpp" />
+    <ClCompile Include="..\code\utils\profiler.cpp" />
+    <ClCompile Include="..\code\window\keyboard.cpp" />
     <ClCompile Include="..\code\window\touch.cpp" />
+    <ClCompile Include="..\code\window\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\code\animate\tween.h" />
+    <ClInclude Include="..\code\axime.h" />
     <ClInclude Include="..\code\cross\define.h" />
+    <ClInclude Include="..\code\display\fusion.h" />
+    <ClInclude Include="..\code\display\image.h" />
     <ClInclude Include="..\code\display\node.h" />
     <ClInclude Include="..\code\events\event.h" />
     <ClInclude Include="..\code\events\touchEvent.h" />
+    <ClInclude Include="..\code\gesture\gesture.h" />
+    <ClInclude Include="..\code\logging\log.h" />
+    <ClInclude Include="..\code\math\math.h" />
+    <ClInclude Include="..\code\resource\resource.h" />
+    <ClInclude Include="..\code\ticking\tick.h" />
+    <ClInclude Include="..\code\utils\profiler.h" />
+    <ClInclude Include="..\code\window\keyboard.h" />
     <ClInclude Include="..\code\window\touch.h" />
+    <ClInclude Include="..\code\window\window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

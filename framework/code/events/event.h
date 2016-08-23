@@ -1,5 +1,5 @@
-#ifndef __AA_EVENT__
-#define __AA_EVENT__
+#ifndef __AM_EVENT__
+#define __AM_EVENT__
 
 #include <iostream>
 #include <functional>
@@ -12,7 +12,7 @@ class Listener;
 
 // 事件对象，可对其创建侦听器，或将其触发
 
-class AA_DLL AEvent {
+class AM_DLL AEvent {
 
 public:
 
@@ -53,7 +53,7 @@ protected:
 
 // 一个Listener是对一个function对象的次级封装
 
-class AA_DLL Listener {
+class AM_DLL Listener {
 
 public:
 

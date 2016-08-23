@@ -13,6 +13,27 @@
     <Filter Include="window">
       <UniqueIdentifier>{7e8c8bb5-6541-4905-8013-8366ed9f3f89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ticking">
+      <UniqueIdentifier>{192db3c3-e678-4a3a-a8f9-b161b9e46375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{9e9a3d51-fd8f-4103-aa73-f412fca72c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animate">
+      <UniqueIdentifier>{c050e36c-82ef-4bea-93a7-ba33be4b7299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logging">
+      <UniqueIdentifier>{9b516a0c-bf46-4c26-a71c-9456a58a6e1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gesture">
+      <UniqueIdentifier>{6cfeae7d-54e9-42fe-a699-a7795c505feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{0a7581c1-ccfc-4194-ad0f-770ebe255fd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{ae3c7456-f871-4abd-bd52-3d2a737d45e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\events\event.h">
@@ -30,6 +51,40 @@
     <ClInclude Include="..\code\window\touch.h">
       <Filter>window</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\axime.h" />
+    <ClInclude Include="..\code\window\keyboard.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\window\window.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\display\image.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\resource\resource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\ticking\tick.h">
+      <Filter>ticking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\animate\tween.h">
+      <Filter>animate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\display\fusion.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\logging\log.h">
+      <Filter>logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\gesture\gesture.h">
+      <Filter>gesture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\math\math.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\utils\profiler.h">
+      <Filter>utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\events\event.cpp">
@@ -43,6 +98,40 @@
     </ClCompile>
     <ClCompile Include="..\code\window\touch.cpp">
       <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\axime.cpp" />
+    <ClCompile Include="..\code\window\keyboard.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\window\window.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\display\image.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\resource\resource.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\ticking\tick.cpp">
+      <Filter>ticking</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\animate\tween.cpp">
+      <Filter>animate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\display\fusion.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\logging\log.cpp">
+      <Filter>logging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\gesture\gesture.cpp">
+      <Filter>gesture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\math\math.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\utils\profiler.cpp">
+      <Filter>utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

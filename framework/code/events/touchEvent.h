@@ -1,11 +1,11 @@
-#ifndef __AA_TOUCH_EVENT__
-#define __AA_TOUCH_EVENT__
+#ifndef __AM_TOUCH_EVENT__
+#define __AM_TOUCH_EVENT__
 
 #include "event.h"
 #include "cross\define.h"
 #include "window\touch.h"
 
-class AA_DLL ATouchEvent : public AEvent {
+class AM_DLL ATouchEvent : public AEvent {
 
 public:
 
