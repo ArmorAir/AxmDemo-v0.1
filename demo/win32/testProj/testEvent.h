@@ -19,11 +19,15 @@ public:
 };
 
 void testEvent() {
+	Listener* LA = nullptr;
+	Listener* LB = nullptr;
+	AEvent* tmpEvt = nullptr;
+
 	ObjA* a = new ObjA;
 
 	AEvent* evt = new AEvent();
 	
-	evt->createListener([](AEvent* v)->void {
+	LA = evt->createListener([](AEvent* v)->void {
 		std::cout << "lambda::" << static_cast<const char*>(v->getUserData()) << std::endl;
 		//v->stopPropagation();
 	});
@@ -31,18 +35,30 @@ void testEvent() {
 	evt->createListener(&ObjA::func_s);
 	evt->setUserData("AAA");
 	evt->trigger();
+
+
+	std::cout << "===============================" << std::endl;
 	
+
 	ATouchEvent* touchEvt = new ATouchEvent;
 	auto lamb_A = [](AEvent* v)-> void {
 		std::cout << static_cast<const char*>(v->getUserData()) << std::endl;
-		std::cout << "lamb: " << typeid(v).name() << std::endl;
+
+		std::cout << "lambda: " << typeid(v).name() << std::endl;
+		std::cout << "lambda: " << typeid(static_cast<ATouchEvent*>(v)).name() << std::endl;
 	};
-	touchEvt->createListener(lamb_A);
+	LB = touchEvt->createListener(lamb_A);
 	touchEvt->setUserData("TTT");
-	touchEvt->trigger();
+ 	touchEvt->trigger();
+
+	tmpEvt = LA->getEvent();
+
+	LA->kill();
+
+	evt->kill();
+	//evt->trigger();
 
 
-
-
+	//LA->kill();
 
 }

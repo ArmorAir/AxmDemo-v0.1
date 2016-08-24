@@ -2,17 +2,12 @@
 
 
 
-Listener::Listener(int priority) :
-	m_priority(priority),
-	m_prev(nullptr),
-	m_next(nullptr),
-	m_delayed(false)
-{
-
-}
+//-------------------------------
+// AEvent
+//-------------------------------
 
 AEvent::AEvent(void* target) :
-	m_begin(new Listener(0)),
+	m_begin(new Listener(this, 0)),
 	m_curr(nullptr),
 	m_end(nullptr),
 	m_target(target),
@@ -27,24 +22,19 @@ AEvent::AEvent() :
 
 }
 
-AEvent::~AEvent() {
-
-}
-
 Listener* AEvent::createListener(std::function<void(AEvent*)> callback, int priority) {
-	Listener* LB = new Listener(priority);
-	LB->m_callback = std::move(callback);
-	Listener* LA = nullptr;
-
-	LB->m_delayed = m_curr && (m_curr == m_begin || LB->m_priority <= m_curr->m_priority);
+	Listener* LA    =  nullptr;
+	Listener* LB    =  new Listener(this, priority);
+	LB->m_callback  =  std::move(callback);
+	LB->m_delayed   =  m_curr && (m_curr == m_begin || LB->m_priority <= m_curr->m_priority);
 	if (!m_end) {
-		LB->m_prev = m_begin;
-		m_begin->m_next = m_end = LB;
+		LB->m_prev       =  m_begin;
+		m_begin->m_next  =  m_end = LB;
 	}
 	else if (LB->m_priority <= m_end->m_priority) {
-		LB->m_prev = m_end;
-		m_end->m_next = LB;
-		m_end = LB;
+		LB->m_prev     =  m_end;
+		m_end->m_next  =  LB;
+		m_end          =  LB;
 	}
 	else {
 		LA = m_end->m_prev;
@@ -53,8 +43,8 @@ Listener* AEvent::createListener(std::function<void(AEvent*)> callback, int prio
 		}
 		LB->m_prev = LA;
 		if (LA->m_next) {
-			LB->m_next = LA->m_next;
-			LA->m_next = LA->m_next->m_prev = LB;
+			LB->m_next  =  LA->m_next;
+			LA->m_next  =  LA->m_next->m_prev = LB;
 		}
 		else {
 			LA->m_next = LB;
@@ -103,6 +93,56 @@ void AEvent::stopPropagation() {
 	}
 }
 
-void AEvent::dispose() {
+void AEvent::kill() {
+	this->doDispose();
+}
 
+void AEvent::doDispose() {
+	Listener* curr = nullptr;
+	Listener* next = m_begin->m_next;
+	delete m_begin;
+	while (next) {
+		curr = next;
+		next = curr->m_next;
+		delete curr;
+	}
+	delete this;
+}
+
+void AEvent::doDestroyListener(Listener* LA) {
+	if (LA == m_curr) {
+		m_curr = LA->m_prev;
+	}
+	if (LA == m_end) {
+		m_end = (LA->m_prev == m_begin) ? nullptr : LA->m_prev;
+	}
+	LA->m_prev->m_next = LA->m_next;
+	if (LA->m_next) {
+		LA->m_next->m_prev = LA->m_prev;
+	}
+	delete LA;
+}
+
+
+
+//-------------------------------
+// Listener
+//-------------------------------
+
+Listener::Listener(AEvent* evt, int priority) :
+	m_event(evt),
+	m_priority(priority),
+	m_prev(nullptr),
+	m_next(nullptr),
+	m_delayed(false)
+{
+
+}
+
+AEvent* Listener::getEvent() {
+	return m_event;
+}
+
+void Listener::kill() {
+	m_event->doDestroyListener(this);
 }

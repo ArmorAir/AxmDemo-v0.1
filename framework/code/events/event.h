@@ -10,15 +10,15 @@
 
 class Listener;
 
-// 事件对象，可对其创建侦听器，或将其触发
-
+// 事件对象，可对其创建侦听，摧毁侦听，及将其触发
 class AM_DLL AEvent {
+
+friend class Listener;
 
 public:
 
 	AEvent(void* target);
 	AEvent();
-	virtual ~AEvent();
 
 	// 创建侦听器
 	Listener* createListener(std::function<void(AEvent*)> callback, int priority);
@@ -27,7 +27,7 @@ public:
 	// 触发
 	void trigger();
 
-	// 目标
+	// 事件目标
 	void* getTarget() const;
 	void setTarget(void* v);
 
@@ -38,11 +38,14 @@ public:
 	// 停止传播
 	void stopPropagation();
 
-
-	void dispose();
+	// letgo
+	void kill();
 
 protected:
-	
+
+	void doDispose();
+	void doDestroyListener(Listener* LA);
+
 	Listener* m_begin;
 	Listener* m_end;
 	Listener* m_curr;
@@ -52,24 +55,28 @@ protected:
 };
 
 // 一个Listener是对一个function对象的次级封装
-
 class AM_DLL Listener {
+
+friend class AEvent;
 
 public:
 
+	// 获取事件
+	AEvent* getEvent();
 
+	// letgo
+	void kill();
 
-private:
+protected:
 
-	friend class AEvent;
+	Listener(AEvent* evt, int priority);
 
-	Listener(int priority);
-
-	std::function<void(AEvent*)> m_callback;
+	AEvent* m_event;
 	int m_priority;
-	bool m_delayed;
 	Listener* m_prev;
 	Listener* m_next;
+	bool m_delayed;
+	std::function<void(AEvent*)> m_callback;
 
 };
 
