@@ -42,8 +42,7 @@ public:
 	void kill();
 
 protected:
-
-	void doDispose();
+	
 	void doDestroyListener(Listener* LA);
 
 	Listener* m_begin;

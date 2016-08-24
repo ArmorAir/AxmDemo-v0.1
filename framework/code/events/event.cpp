@@ -94,10 +94,6 @@ void AEvent::stopPropagation() {
 }
 
 void AEvent::kill() {
-	this->doDispose();
-}
-
-void AEvent::doDispose() {
 	Listener* curr = nullptr;
 	Listener* next = m_begin->m_next;
 	delete m_begin;
