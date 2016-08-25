@@ -6,7 +6,12 @@ class ObjA {
 
 public:
 
+	ObjA() {
+		m_evt->createListener(std::bind(&ObjA::funcSelf, this, std::placeholders::_1));
+	}
+
 	int i = 33;
+	ATouchEvent* m_evt = new ATouchEvent;
 
 	void func_m(AEvent* evt) {
 		std::cout << "A::func_m::(i)"<< i << std::endl;
@@ -15,6 +20,10 @@ public:
 	static void func_s(AEvent* evt) {
 		
 		std::cout << "A::func_s" << std::endl;
+	}
+
+	void funcSelf(AEvent* evt) {
+		std::cout << "self: " << typeid(m_evt).name() << std::endl;
 	}
 };
 
@@ -56,6 +65,10 @@ void testEvent() {
 	LA->kill();
 
 	evt->kill();
+
+
+	a->m_evt->trigger();
+
 	//evt->trigger();
 
 

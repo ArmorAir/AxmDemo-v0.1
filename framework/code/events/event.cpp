@@ -58,6 +58,10 @@ Listener* AEvent::createListener(std::function<void(AEvent*)> callback) {
 }
 
 void AEvent::trigger() {
+	// 正在触发中的事件不可调用
+	if (m_curr) {
+		return;
+	}
 	m_curr = m_begin->m_next;
 	while (m_curr) {
 		if (m_curr->m_delayed) {

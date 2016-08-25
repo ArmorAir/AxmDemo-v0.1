@@ -10,7 +10,7 @@
 
 class Listener;
 
-// 事件对象，可对其创建侦听，摧毁侦听，及将其触发
+// 事件对象，可创建侦听，以及自我触发
 class AM_DLL AEvent {
 
 friend class Listener;
