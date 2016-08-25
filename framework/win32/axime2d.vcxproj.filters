@@ -31,8 +31,11 @@
     <Filter Include="utils">
       <UniqueIdentifier>{0a7581c1-ccfc-4194-ad0f-770ebe255fd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="math">
-      <UniqueIdentifier>{ae3c7456-f871-4abd-bd52-3d2a737d45e1}</UniqueIdentifier>
+    <Filter Include="value">
+      <UniqueIdentifier>{eed6a847-edd3-44aa-abb6-222d82d5e469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basic">
+      <UniqueIdentifier>{4647835e-4c97-44e6-a4f4-57c89d435b06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,11 +82,14 @@
     <ClInclude Include="..\code\gesture\gesture.h">
       <Filter>gesture</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\math\math.h">
-      <Filter>math</Filter>
-    </ClInclude>
     <ClInclude Include="..\code\utils\profiler.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\value\value.h">
+      <Filter>value</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\basic\math.h">
+      <Filter>basic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,11 +133,14 @@
     <ClCompile Include="..\code\gesture\gesture.cpp">
       <Filter>gesture</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\math\math.cpp">
-      <Filter>math</Filter>
-    </ClCompile>
     <ClCompile Include="..\code\utils\profiler.cpp">
       <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\value\value.cpp">
+      <Filter>value</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\basic\math.cpp">
+      <Filter>basic</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
