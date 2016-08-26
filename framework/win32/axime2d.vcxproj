@@ -94,6 +94,7 @@
     <ClCompile Include="..\code\animate\tween.cpp" />
     <ClCompile Include="..\code\axime.cpp" />
     <ClCompile Include="..\code\basic\math.cpp" />
+    <ClCompile Include="..\code\cross\launch.cpp" />
     <ClCompile Include="..\code\display\fusion.cpp" />
     <ClCompile Include="..\code\display\image.cpp" />
     <ClCompile Include="..\code\display\node.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="..\code\axime.h" />
     <ClInclude Include="..\code\basic\math.h" />
     <ClInclude Include="..\code\cross\define.h" />
+    <ClInclude Include="..\code\cross\launch.h" />
     <ClInclude Include="..\code\display\fusion.h" />
     <ClInclude Include="..\code\display\image.h" />
     <ClInclude Include="..\code\display\node.h" />

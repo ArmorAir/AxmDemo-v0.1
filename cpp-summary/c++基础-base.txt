@@ -377,8 +377,19 @@ void update() { A::update(); ... }
 ==================================================
 虚函数:
 --------------------------------------------------
-只有实现虚函数才对其可进行复写
-virtual void update() { } 
+只有实现虚函数才对其可进行复写，在子类的复写方法中也可"super"其他父类方法...
+class A {
+    virtual void update() { ... } 
+    virtual void update1() { ... } 
+    virtual void update2() { ... } 
+}
+class B : public A {
+    virtual void update() { 
+        A::update();
+        A::update1();
+        A::update2();
+    } 
+}
 
 ps. 
 1. 父类中方法声明为virtual，该方法在子类中自动就是virtual...!!（子类中还是要加上virtual保持一致）

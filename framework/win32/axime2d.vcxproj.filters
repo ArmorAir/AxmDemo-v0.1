@@ -91,6 +91,9 @@
     <ClInclude Include="..\code\basic\math.h">
       <Filter>basic</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\cross\launch.h">
+      <Filter>cross</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\events\event.cpp">
@@ -141,6 +144,9 @@
     </ClCompile>
     <ClCompile Include="..\code\basic\math.cpp">
       <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\cross\launch.cpp">
+      <Filter>cross</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

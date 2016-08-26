@@ -1,5 +1,5 @@
-#ifndef AM_DEFINE
-#define AM_DEFINE
+#ifndef __AM_DEFINE__
+#define __AM_DEFINE__
 
 
 

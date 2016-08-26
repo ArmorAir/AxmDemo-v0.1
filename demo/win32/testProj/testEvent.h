@@ -22,9 +22,24 @@ public:
 		std::cout << "A::func_s" << std::endl;
 	}
 
-	void funcSelf(AEvent* evt) {
+	virtual void funcSelf(AEvent* evt) {
 		std::cout << "self: " << typeid(m_evt).name() << std::endl;
 	}
+};
+
+class ObjB : public ObjA {
+
+public:
+
+	virtual void funcSelf(AEvent* evt) {
+		ObjA::funcSelf(evt);
+
+		ObjA::func_m(evt);
+		
+		std::cout << "ObjB..." << std::endl;
+	}
+
+
 };
 
 void testEvent() {
@@ -33,6 +48,7 @@ void testEvent() {
 	AEvent* tmpEvt = nullptr;
 
 	ObjA* a = new ObjA;
+	ObjB* b = new ObjB;
 
 	AEvent* evt = new AEvent();
 	
@@ -71,6 +87,10 @@ void testEvent() {
 
 	//evt->trigger();
 
+	std::cout << "===============================" << std::endl;
+
+	b->i = 44;
+	b->funcSelf(evt);
 
 	//LA->kill();
 
