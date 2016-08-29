@@ -2,7 +2,7 @@
 #define __AM_TOUCH_EVENT__
 
 #include "event.h"
-#include "cross\define.h"
+#include "cross\c-define.h"
 #include "window\touch.h"
 
 class AM_DLL ATouchEvent : public AEvent {

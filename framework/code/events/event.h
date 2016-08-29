@@ -4,7 +4,7 @@
 #include <iostream>
 #include <functional>
 
-#include "cross\define.h"
+#include "cross\c-define.h"
 
 
 

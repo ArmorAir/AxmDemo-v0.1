@@ -37,6 +37,18 @@
     <Filter Include="basic">
       <UniqueIdentifier>{4647835e-4c97-44e6-a4f4-57c89d435b06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="startup">
+      <UniqueIdentifier>{973690e3-e6a5-4730-8deb-60c6b647b991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cross\gl">
+      <UniqueIdentifier>{31960ccb-1a51-49fd-9eec-20a4dd5b5fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cross\stage">
+      <UniqueIdentifier>{ea18efc4-f121-48a3-9874-85b05b000ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cross\define">
+      <UniqueIdentifier>{b5b3a75f-b9be-44a6-b238-b18c4b73230c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\events\event.h">
@@ -45,16 +57,12 @@
     <ClInclude Include="..\code\events\touchEvent.h">
       <Filter>events</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\cross\define.h">
-      <Filter>cross</Filter>
-    </ClInclude>
     <ClInclude Include="..\code\display\node.h">
       <Filter>display</Filter>
     </ClInclude>
     <ClInclude Include="..\code\window\touch.h">
       <Filter>window</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\axime.h" />
     <ClInclude Include="..\code\window\keyboard.h">
       <Filter>window</Filter>
     </ClInclude>
@@ -91,7 +99,28 @@
     <ClInclude Include="..\code\basic\math.h">
       <Filter>basic</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\cross\launch.h">
+    <ClInclude Include="..\code\startup\axime.h">
+      <Filter>startup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\startup\launch.h">
+      <Filter>startup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\gl\win32-gl.h">
+      <Filter>cross\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\define\win32-define.h">
+      <Filter>cross\define</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\stage\win32-stage.h">
+      <Filter>cross\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\c-gl.h">
+      <Filter>cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\c-define.h">
+      <Filter>cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\c-stage.h">
       <Filter>cross</Filter>
     </ClInclude>
   </ItemGroup>
@@ -108,7 +137,6 @@
     <ClCompile Include="..\code\window\touch.cpp">
       <Filter>window</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\axime.cpp" />
     <ClCompile Include="..\code\window\keyboard.cpp">
       <Filter>window</Filter>
     </ClCompile>
@@ -145,8 +173,17 @@
     <ClCompile Include="..\code\basic\math.cpp">
       <Filter>basic</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\cross\launch.cpp">
-      <Filter>cross</Filter>
+    <ClCompile Include="..\code\startup\axime.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\startup\launch.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\cross\gl\win32-gl.cpp">
+      <Filter>cross\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\cross\stage\win32-stage.cpp">
+      <Filter>cross\stage</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

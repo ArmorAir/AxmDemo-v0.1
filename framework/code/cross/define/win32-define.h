@@ -1,5 +1,5 @@
-#ifndef __AM_DEFINE__
-#define __AM_DEFINE__
+#ifndef __AM_WIN32_DEFINE__
+#define __AM_WIN32_DEFINE__
 
 
 
@@ -8,6 +8,8 @@
 #else
 	#define AM_DLL __declspec(dllimport)
 #endif
+
+
 
 
 
