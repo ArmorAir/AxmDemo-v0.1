@@ -49,6 +49,9 @@
     <Filter Include="cross\define">
       <UniqueIdentifier>{b5b3a75f-b9be-44a6-b238-b18c4b73230c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cross\extension">
+      <UniqueIdentifier>{0d04d821-3400-44a7-a0c1-45bfa4cc4a46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\events\event.h">
@@ -99,9 +102,6 @@
     <ClInclude Include="..\code\basic\math.h">
       <Filter>basic</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\startup\axime.h">
-      <Filter>startup</Filter>
-    </ClInclude>
     <ClInclude Include="..\code\startup\launch.h">
       <Filter>startup</Filter>
     </ClInclude>
@@ -123,6 +123,7 @@
     <ClInclude Include="..\code\cross\c-stage.h">
       <Filter>cross</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\axime.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\events\event.cpp">
@@ -173,9 +174,6 @@
     <ClCompile Include="..\code\basic\math.cpp">
       <Filter>basic</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\startup\axime.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
     <ClCompile Include="..\code\startup\launch.cpp">
       <Filter>startup</Filter>
     </ClCompile>
@@ -185,5 +183,6 @@
     <ClCompile Include="..\code\cross\stage\win32-stage.cpp">
       <Filter>cross\stage</Filter>
     </ClCompile>
+    <ClCompile Include="..\code\axime.cpp" />
   </ItemGroup>
 </Project>

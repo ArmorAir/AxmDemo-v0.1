@@ -1,6 +1,9 @@
 #include "touch.h"
 
+TouchManager::TouchManager() {
 
+
+}
 
 Touch::Touch()
 {

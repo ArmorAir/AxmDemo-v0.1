@@ -5,6 +5,17 @@
 
 
 
+class AM_DLL TouchManager {
+
+public:
+
+	TouchManager();
+
+
+
+
+};
+
 class AM_DLL Touch {
 
 public:

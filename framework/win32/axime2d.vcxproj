@@ -92,6 +92,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\code\animate\tween.cpp" />
+    <ClCompile Include="..\code\axime.cpp" />
     <ClCompile Include="..\code\basic\math.cpp" />
     <ClCompile Include="..\code\cross\gl\win32-gl.cpp" />
     <ClCompile Include="..\code\cross\stage\win32-stage.cpp" />
@@ -103,7 +104,6 @@
     <ClCompile Include="..\code\gesture\gesture.cpp" />
     <ClCompile Include="..\code\logging\log.cpp" />
     <ClCompile Include="..\code\resource\resource.cpp" />
-    <ClCompile Include="..\code\startup\axime.cpp" />
     <ClCompile Include="..\code\startup\launch.cpp" />
     <ClCompile Include="..\code\ticking\tick.cpp" />
     <ClCompile Include="..\code\utils\profiler.cpp" />
@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\animate\tween.h" />
+    <ClInclude Include="..\code\axime.h" />
     <ClInclude Include="..\code\basic\math.h" />
     <ClInclude Include="..\code\cross\c-gl.h" />
     <ClInclude Include="..\code\cross\c-define.h" />
@@ -129,7 +130,6 @@
     <ClInclude Include="..\code\gesture\gesture.h" />
     <ClInclude Include="..\code\logging\log.h" />
     <ClInclude Include="..\code\resource\resource.h" />
-    <ClInclude Include="..\code\startup\axime.h" />
     <ClInclude Include="..\code\startup\launch.h" />
     <ClInclude Include="..\code\ticking\tick.h" />
     <ClInclude Include="..\code\utils\profiler.h" />

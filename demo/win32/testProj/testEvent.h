@@ -31,7 +31,15 @@ class ObjB : public ObjA {
 
 public:
 
+	static void func_s(AEvent* evt) {
+		//ObjA::func_s(evt);
+
+		std::cout << "B::func_s" << std::endl;
+	}
+
 	virtual void funcSelf(AEvent* evt) {
+		
+
 		ObjA::funcSelf(evt);
 
 		ObjA::func_m(evt);
@@ -57,7 +65,7 @@ void testEvent() {
 		//v->stopPropagation();
 	});
 	evt->createListener(std::bind(&ObjA::func_m, a, std::placeholders::_1), 1);
-	evt->createListener(&ObjA::func_s);
+	evt->createListener(&ObjB::func_s);
 	evt->setUserData("AAA");
 	evt->trigger();
 
@@ -91,6 +99,9 @@ void testEvent() {
 
 	b->i = 44;
 	b->funcSelf(evt);
+
+
+	
 
 	//LA->kill();
 
