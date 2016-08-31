@@ -37,9 +37,6 @@
     <Filter Include="basic">
       <UniqueIdentifier>{4647835e-4c97-44e6-a4f4-57c89d435b06}</UniqueIdentifier>
     </Filter>
-    <Filter Include="startup">
-      <UniqueIdentifier>{973690e3-e6a5-4730-8deb-60c6b647b991}</UniqueIdentifier>
-    </Filter>
     <Filter Include="cross\gl">
       <UniqueIdentifier>{31960ccb-1a51-49fd-9eec-20a4dd5b5fd3}</UniqueIdentifier>
     </Filter>
@@ -102,9 +99,6 @@
     <ClInclude Include="..\code\basic\math.h">
       <Filter>basic</Filter>
     </ClInclude>
-    <ClInclude Include="..\code\startup\launch.h">
-      <Filter>startup</Filter>
-    </ClInclude>
     <ClInclude Include="..\code\cross\gl\win32-gl.h">
       <Filter>cross\gl</Filter>
     </ClInclude>
@@ -124,6 +118,21 @@
       <Filter>cross</Filter>
     </ClInclude>
     <ClInclude Include="..\code\axime.h" />
+    <ClInclude Include="..\code\basic\point.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\basic\rect.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\basic\mat44.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\cross\launch.h">
+      <Filter>cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\basic\size.h">
+      <Filter>basic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\events\event.cpp">
@@ -174,9 +183,6 @@
     <ClCompile Include="..\code\basic\math.cpp">
       <Filter>basic</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\startup\launch.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
     <ClCompile Include="..\code\cross\gl\win32-gl.cpp">
       <Filter>cross\gl</Filter>
     </ClCompile>
@@ -184,5 +190,20 @@
       <Filter>cross\stage</Filter>
     </ClCompile>
     <ClCompile Include="..\code\axime.cpp" />
+    <ClCompile Include="..\code\basic\point.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\basic\rect.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\basic\mat44.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\cross\launch.cpp">
+      <Filter>cross</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\basic\size.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

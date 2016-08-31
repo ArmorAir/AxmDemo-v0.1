@@ -93,8 +93,13 @@
   <ItemGroup>
     <ClCompile Include="..\code\animate\tween.cpp" />
     <ClCompile Include="..\code\axime.cpp" />
+    <ClCompile Include="..\code\basic\mat44.cpp" />
     <ClCompile Include="..\code\basic\math.cpp" />
+    <ClCompile Include="..\code\basic\point.cpp" />
+    <ClCompile Include="..\code\basic\rect.cpp" />
+    <ClCompile Include="..\code\basic\size.cpp" />
     <ClCompile Include="..\code\cross\gl\win32-gl.cpp" />
+    <ClCompile Include="..\code\cross\launch.cpp" />
     <ClCompile Include="..\code\cross\stage\win32-stage.cpp" />
     <ClCompile Include="..\code\display\fusion.cpp" />
     <ClCompile Include="..\code\display\image.cpp" />
@@ -104,7 +109,6 @@
     <ClCompile Include="..\code\gesture\gesture.cpp" />
     <ClCompile Include="..\code\logging\log.cpp" />
     <ClCompile Include="..\code\resource\resource.cpp" />
-    <ClCompile Include="..\code\startup\launch.cpp" />
     <ClCompile Include="..\code\ticking\tick.cpp" />
     <ClCompile Include="..\code\utils\profiler.cpp" />
     <ClCompile Include="..\code\value\value.cpp" />
@@ -115,12 +119,17 @@
   <ItemGroup>
     <ClInclude Include="..\code\animate\tween.h" />
     <ClInclude Include="..\code\axime.h" />
+    <ClInclude Include="..\code\basic\mat44.h" />
     <ClInclude Include="..\code\basic\math.h" />
+    <ClInclude Include="..\code\basic\point.h" />
+    <ClInclude Include="..\code\basic\rect.h" />
+    <ClInclude Include="..\code\basic\size.h" />
     <ClInclude Include="..\code\cross\c-gl.h" />
     <ClInclude Include="..\code\cross\c-define.h" />
     <ClInclude Include="..\code\cross\define\win32-define.h" />
     <ClInclude Include="..\code\cross\gl\win32-gl.h" />
     <ClInclude Include="..\code\cross\c-stage.h" />
+    <ClInclude Include="..\code\cross\launch.h" />
     <ClInclude Include="..\code\cross\stage\win32-stage.h" />
     <ClInclude Include="..\code\display\fusion.h" />
     <ClInclude Include="..\code\display\image.h" />
@@ -130,7 +139,6 @@
     <ClInclude Include="..\code\gesture\gesture.h" />
     <ClInclude Include="..\code\logging\log.h" />
     <ClInclude Include="..\code\resource\resource.h" />
-    <ClInclude Include="..\code\startup\launch.h" />
     <ClInclude Include="..\code\ticking\tick.h" />
     <ClInclude Include="..\code\utils\profiler.h" />
     <ClInclude Include="..\code\value\value.h" />
