@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lv_1">
+      <UniqueIdentifier>{3e06fef7-5a5d-492a-9b7a-bde7d482e170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_2">
+      <UniqueIdentifier>{b17f974b-2f08-46ff-8223-ad0958ff102a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_3">
+      <UniqueIdentifier>{9c79176a-9313-42cf-b59b-c13eb3207fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_3\animate">
+      <UniqueIdentifier>{c050e36c-82ef-4bea-93a7-ba33be4b7299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\events">
+      <UniqueIdentifier>{c6b5b92a-b2d8-4ea4-86ef-3d19e3a2c257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_3\gesture">
+      <UniqueIdentifier>{6cfeae7d-54e9-42fe-a699-a7795c505feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\resource">
+      <UniqueIdentifier>{9e9a3d51-fd8f-4103-aa73-f412fca72c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\ticking">
+      <UniqueIdentifier>{192db3c3-e678-4a3a-a8f9-b161b9e46375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\window">
+      <UniqueIdentifier>{7e8c8bb5-6541-4905-8013-8366ed9f3f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\logging">
+      <UniqueIdentifier>{9b516a0c-bf46-4c26-a71c-9456a58a6e1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_3\value">
+      <UniqueIdentifier>{eed6a847-edd3-44aa-abb6-222d82d5e469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\cross">
+      <UniqueIdentifier>{033989b9-ab6e-4392-8834-d2528d3864b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\cross\gl">
+      <UniqueIdentifier>{31960ccb-1a51-49fd-9eec-20a4dd5b5fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\cross\stage">
+      <UniqueIdentifier>{ea18efc4-f121-48a3-9874-85b05b000ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\cross\define">
+      <UniqueIdentifier>{b5b3a75f-b9be-44a6-b238-b18c4b73230c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_1\cross\extension">
+      <UniqueIdentifier>{0d04d821-3400-44a7-a0c1-45bfa4cc4a46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0">
+      <UniqueIdentifier>{26cbb72c-11a5-4a44-8c83-aeb1ddd48ff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\events">
+      <UniqueIdentifier>{ca6e75d7-13c8-4999-8ea5-7a1fdd19c08a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\Lv_1\cross\c-define.h">
+      <Filter>Lv_1\cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\cross\c-gl.h">
+      <Filter>Lv_1\cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\cross\c-stage.h">
+      <Filter>Lv_1\cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\cross\launch.h">
+      <Filter>Lv_1\cross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\events\touchEvent.h">
+      <Filter>Lv_1\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\logging\log.h">
+      <Filter>Lv_1\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\resource\resource.h">
+      <Filter>Lv_1\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\window\keyboard.h">
+      <Filter>Lv_1\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\window\touch.h">
+      <Filter>Lv_1\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\window\window.h">
+      <Filter>Lv_1\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_1\cross\define\win32-define.h">
+      <Filter>Lv_1\cross\define</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\Lv_0\events\event.h">
+      <Filter>Lv_0\events</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\Lv_1\cross\launch.cpp">
+      <Filter>Lv_1\cross</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\events\touchEvent.cpp">
+      <Filter>Lv_1\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\logging\log.cpp">
+      <Filter>Lv_1\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\resource\resource.cpp">
+      <Filter>Lv_1\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\window\keyboard.cpp">
+      <Filter>Lv_1\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\window\touch.cpp">
+      <Filter>Lv_1\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\window\window.cpp">
+      <Filter>Lv_1\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_1\cross\define\win32-define.cpp">
+      <Filter>Lv_1\cross\define</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\Lv_0\events\event.cpp">
+      <Filter>Lv_0\events</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
