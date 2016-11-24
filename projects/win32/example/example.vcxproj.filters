@@ -2,22 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="src">
-      <UniqueIdentifier>{bf121a29-e5c8-4f31-a98f-9469d24f6d2b}</UniqueIdentifier>
+      <UniqueIdentifier>{8b2a7cad-b2e2-436f-9d9b-f347d3b37a38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\examples\win32\example\cccc.cpp">
+    <ClCompile Include="..\..\..\examples\win32\example\cccc.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\examples\win32\example\main.cpp">
+    <ClCompile Include="..\..\..\examples\win32\example\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\examples\win32\example\cccc.h">
+    <ClInclude Include="..\..\..\examples\win32\example\cccc.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\examples\win32\example\main.h">
+    <ClInclude Include="..\..\..\examples\win32\example\main.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

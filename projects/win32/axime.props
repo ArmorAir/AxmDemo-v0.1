@@ -3,12 +3,19 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <Root>$(MSBuildThisFileDirectory)..\..\</Root>
+    <RES>$(MSBuildThisFileDirectory)..\..\res\</RES>
   </PropertyGroup>
-  <PropertyGroup />
+  <PropertyGroup>
+    <IntDir>$(Root)res\tmp\</IntDir>
+    <OutDir>$(Root)res\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup>
     <BuildMacro Include="Root">
       <Value>$(Root)</Value>
+    </BuildMacro>
+    <BuildMacro Include="RES">
+      <Value>$(RES)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

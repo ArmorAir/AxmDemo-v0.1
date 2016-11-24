@@ -211,7 +211,12 @@ int main() {
 	// texture
 	int texW;
 	int texH;
-	unsigned char* image = SOIL_load_image("img_test.jpg", &texW, &texH, 0, SOIL_LOAD_RGB);
+	unsigned char* image = SOIL_load_image("photo/img_test.jpg", &texW, &texH, 0, SOIL_LOAD_RGB);
+
+	//if (image) {
+	//	cout << "photo size: " << sizeof(image) << endl;
+	//}
+	
 
 	GLuint tex_A;
 	glGenTextures(1, &tex_A);
@@ -229,7 +234,7 @@ int main() {
 
 	//glActiveTexture()
 
-	//glActiveTexture(GL_TEXTURE0);
+	glActiveTexture(GL_TEXTURE0);
 
 	// vertex
 	GLfloat vertices[] =

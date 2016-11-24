@@ -1,7 +1,8 @@
-/tmp/
-/bin/
-/lib/
 /.vs/
 *.sdf
-*.htm
 *.opendb
+*.lib
+*.exe
+*.dll
+*.pdb
+*.ilk
