@@ -1,5 +1,5 @@
-#ifndef __AM_EVENT__
-#define __AM_EVENT__
+#ifndef __LV0_AEVENT__
+#define __LV0_AEVENT__
 
 #include <iostream>
 #include <functional>

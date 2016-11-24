@@ -1,2 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lv_1">
+      <UniqueIdentifier>{d634f048-7f07-4d52-8522-55f2ff057849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0">
+      <UniqueIdentifier>{2167b7e9-e9a7-40d8-85b3-d7c9fbea2d65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\events">
+      <UniqueIdentifier>{f3a42e3c-c1b6-40ca-9edc-129c3450f69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\memory">
+      <UniqueIdentifier>{30f9b2bd-8831-47a4-9268-c67f3916799e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\cross">
+      <UniqueIdentifier>{17a692ee-da0f-4e90-8cef-aed6e1175e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\logging">
+      <UniqueIdentifier>{025bd940-3123-4207-9373-386a81f64358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lv_0\utils">
+      <UniqueIdentifier>{33ccf1db-49d0-4165-8864-043e99d849ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\framework\code\Lv_0\events\AEvent.cpp">
+      <Filter>Lv_0\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\code\Lv_0\memory\AMemory.cpp">
+      <Filter>Lv_0\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\framework\code\Lv_0\logging\LogMachine.cpp">
+      <Filter>Lv_0\logging</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\framework\code\Lv_0\events\AEvent.h">
+      <Filter>Lv_0\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\code\Lv_0\memory\AMemory.h">
+      <Filter>Lv_0\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\code\Lv_0\logging\LogMachine.h">
+      <Filter>Lv_0\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\framework\code\Lv_0\utils\macro.h">
+      <Filter>Lv_0\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
